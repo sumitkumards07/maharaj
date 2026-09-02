@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | Hotel Rajdhani</title>
+    <meta name="description" content="Experience premium luxury at Hotel Rajdhani, located in the heart of East Fort, Thiruvananthapuram, near the Sree Padmanabha Swamy Temple.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffbf0',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706', // Primary Brand Color
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        royal: {
+                            50: '#f4f6f8',
+                            100: '#e4e7eb',
+                            500: '#6b7280',
+                            800: '#1f2937',
+                            900: '#111827', // Dark background
+                            950: '#030712',
+                        },
+                        sand: '#faf9f6', // Light Background
+                    },
+                    backgroundImage: {
+                        'pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ken-burns {
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+
+<body class="bg-sand text-royal-800 font-sans antialiased selection:bg-gold-100 selection:text-gold-900">
+<!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="https://wa.me/919999999999" target="_blank"
+            class="group flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300">
+            <i class="fab fa-whatsapp text-3xl"></i>
+            <span class="absolute right-16 bg-royal-900 text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:09999999999"
+            class="group flex items-center justify-center w-14 h-14 bg-gold-600 text-white rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-bounce">
+            <i class="fas fa-phone-alt text-2xl"></i>
+            <span class="absolute right-16 bg-royal-900 text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Call Now</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-40 glass-nav transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-10 h-10 bg-royal-900 rounded-lg flex items-center justify-center text-gold-500 shadow-lg group-hover:bg-gold-600 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-crown text-lg"></i>
+                    </div>
+                    <div class="leading-tight">
+                        <h1 class="font-bold text-2xl text-royal-900 tracking-tight">Hotel Rajdhani</h1>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Home</a>
+                    <a href="#about"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">About</a>
+                    <a href="#rooms"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Rooms</a>
+                    <a href="#amenities"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Amenities</a>
+                    <a href="#contact"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Contact</a>
+                    <a href="tel:09999999999"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-2.5 rounded-full font-bold text-sm tracking-widest uppercase shadow-lg transition-all transform hover:-translate-y-0.5 duration-300">
+                        Book Now
+                    </a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden text-royal-900 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute w-full left-0 shadow-2xl">
+            <div class="flex flex-col p-6 space-y-5 text-center">
+                <a href="#home" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Home</a>
+                <a href="#about" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">About</a>
+                <a href="#rooms" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Rooms</a>
+                <a href="#amenities" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Amenities</a>
+                <a href="#contact" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Contact</a>
+                <a href="tel:09999999999" class="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full uppercase tracking-widest font-bold shadow-md transition-colors">Reserve Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-20 px-4 md:px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-gold-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Legal Information</span>
+                <h1 class="text-4xl md:text-5xl text-royal-900 font-bold mb-4">Disclaimer</h1>
+                <div class="h-1 w-20 bg-gold-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-gray-100 border border-gray-100 relative overflow-hidden">
+                <div class="relative z-10 space-y-8">
+                    
+                    <div class="flex gap-6 items-start pb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600">
+                            <i class="fas fa-info-circle text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-royal-900 mb-3">General Information</h3>
+                            <p class="text-royal-500 leading-relaxed font-light">
+                                All information provided on the <strong>Hotel Rajdhani</strong> website is for general information purposes only. We aim to provide an accurate representation of our rooms and services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 items-start pb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600">
+                            <i class="fas fa-sync-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-royal-900 mb-3">Accuracy & Updates</h3>
+                            <p class="text-royal-500 leading-relaxed font-light">
+                                While we strive for accuracy regarding room availability and facilities, details and pricing are subject to change without notice. We request guests to verify details at the time of booking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-8 border-t border-gray-100">
+                        <a href="index.html" class="inline-flex items-center gap-2 text-royal-500 hover:text-blue-600 font-bold uppercase tracking-widest text-xs transition-colors">
+                            <i class="fas fa-arrow-left"></i> Back to Homepage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+    <footer class="bg-royal-950 text-gray-400 py-12 border-t border-royal-900">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <i class="fas fa-crown text-2xl text-gold-600"></i>
+                <span class="text-white text-2xl font-bold">Hotel Rajdhani</span>
+            </div>
+
+            <p class="text-sm font-light mb-8 max-w-md mx-auto">Experience the perfect blend of Kerala's heritage and modern luxury in the heart of Trivandrum.</p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest font-bold mb-8">
+                <a href="privacy-policy.html" class="hover:text-gold-500 transition-colors">Privacy Policy</a>
+                <span class="text-royal-800">|</span>
+                <a href="terms-and-conditions.html" class="hover:text-gold-500 transition-colors">Terms & Conditions</a>
+                <span class="text-royal-800">|</span>
+                <a href="disclaimer.html" class="hover:text-gold-500 transition-colors">Disclaimer</a>
+            </div>
+            
+            <p class="text-xs text-royal-700 font-light">© 2026 Hotel Rajdhani, Thiruvananthapuram. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+        
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.replace('py-4', 'py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('py-2', 'py-4');
+            }
+        });
+    </script>
+</body>
+</html>

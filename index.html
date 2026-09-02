@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Rajdhani | Premium Stay in Thiruvananthapuram</title>
+    <meta name="description" content="Experience premium luxury at Hotel Rajdhani, located in the heart of East Fort, Thiruvananthapuram, near the Sree Padmanabha Swamy Temple.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffbf0',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706', // Primary Brand Color
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        royal: {
+                            50: '#f4f6f8',
+                            100: '#e4e7eb',
+                            500: '#6b7280',
+                            800: '#1f2937',
+                            900: '#111827', // Dark background
+                            950: '#030712',
+                        },
+                        sand: '#faf9f6', // Light Background
+                    },
+                    backgroundImage: {
+                        'pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ken-burns {
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+
+<body class="bg-sand text-royal-800 font-sans antialiased selection:bg-gold-100 selection:text-gold-900">
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="https://wa.me/919999999999" target="_blank"
+            class="group flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300">
+            <i class="fab fa-whatsapp text-3xl"></i>
+            <span class="absolute right-16 bg-royal-900 text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:09999999999"
+            class="group flex items-center justify-center w-14 h-14 bg-gold-600 text-white rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-bounce">
+            <i class="fas fa-phone-alt text-2xl"></i>
+            <span class="absolute right-16 bg-royal-900 text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Call Now</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-40 glass-nav transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-10 h-10 bg-royal-900 rounded-lg flex items-center justify-center text-gold-500 shadow-lg group-hover:bg-gold-600 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-crown text-lg"></i>
+                    </div>
+                    <div class="leading-tight">
+                        <h1 class="font-bold text-2xl text-royal-900 tracking-tight">Hotel Rajdhani</h1>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Home</a>
+                    <a href="#about"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">About</a>
+                    <a href="#rooms"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Rooms</a>
+                    <a href="#amenities"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Amenities</a>
+                    <a href="#contact"
+                        class="text-sm font-semibold text-royal-500 hover:text-gold-600 transition-colors uppercase tracking-widest">Contact</a>
+                    <a href="tel:09999999999"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-2.5 rounded-full font-bold text-sm tracking-widest uppercase shadow-lg transition-all transform hover:-translate-y-0.5 duration-300">
+                        Book Now
+                    </a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden text-royal-900 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute w-full left-0 shadow-2xl">
+            <div class="flex flex-col p-6 space-y-5 text-center">
+                <a href="#home" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Home</a>
+                <a href="#about" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">About</a>
+                <a href="#rooms" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Rooms</a>
+                <a href="#amenities" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Amenities</a>
+                <a href="#contact" class="text-royal-800 font-semibold uppercase tracking-widest hover:text-gold-600">Contact</a>
+                <a href="tel:09999999999" class="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full uppercase tracking-widest font-bold shadow-md transition-colors">Reserve Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero.webp" alt="Hotel Rajdhani Exterior" class="w-full h-full object-cover ken-burns">
+            <div class="absolute inset-0 bg-gradient-to-b from-royal-950/70 via-royal-900/40 to-royal-950/80"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block mb-6 fade-in-up" style="animation-delay: 0.2s;">
+                <span class="py-1.5 px-5 border border-gold-500/50 rounded-none bg-royal-950/40 backdrop-blur-md text-gold-100 text-xs font-bold uppercase tracking-[0.3em]">
+                    Welcome to Trivandrum
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-tight mb-6 drop-shadow-2xl fade-in-up" style="animation-delay: 0.4s;">
+                Hotel Rajdhani
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed fade-in-up" style="animation-delay: 0.6s;">
+                Located in the heart of East Fort, adjacent to the historic Sree Padmanabha Swamy Temple. Your perfect gateway to Kerala's rich heritage and modern luxury.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 0.8s;">
+                <a href="#rooms"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase transition-all shadow-xl hover:shadow-blue-500/30">
+                    View Rooms
+                </a>
+                <a href="#contact"
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 text-white px-8 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase transition-all shadow-lg backdrop-blur-sm">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#about" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="relative overflow-hidden shadow-2xl group">
+                        <img src="images/hero.webp" alt="Hotel Interior" class="w-full h-[550px] object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95">
+                        <div
+                            class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-royal-950 to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold-400 mb-2">Prime Location</p>
+                            <p class="text-3xl font-bold">Heart of East Fort</p>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -z-10 top-8 -right-8 w-full h-full border border-gold-200 hidden lg:block">
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 lg:pl-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-[1px] w-12 bg-gold-600"></div>
+                        <h4 class="text-gold-600 font-bold uppercase tracking-[0.2em] text-xs">About Hotel Rajdhani</h4>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-royal-900 mb-8 leading-tight">Tradition Meets <br>
+                        <span class="italic text-gold-600">Modern Elegance</span></h2>
+
+                    <p class="text-royal-500 text-lg leading-relaxed mb-6 font-light">
+                        Hotel Rajdhani is a premium property located in the vibrant center of Thiruvananthapuram. As part of the esteemed Rajdhani Group, we bring decades of hospitality excellence to ensure your stay is memorable.
+                    </p>
+                    <p class="text-royal-500 text-lg leading-relaxed mb-8 font-light">
+                        Situated adjacent to the world-renowned Sree Padmanabha Swamy Temple, our hotel offers unparalleled convenience for pilgrims and business travelers alike. Experience the perfect blend of cultural heritage and contemporary comfort.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-royal-900 mb-1">50+</span>
+                            <span class="text-xs text-royal-500 font-semibold uppercase tracking-widest">Years Legacy</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-royal-900 mb-1">2 Min</span>
+                            <span class="text-xs text-royal-500 font-semibold uppercase tracking-widest">To Temple</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-royal-900 mb-1">24/7</span>
+                            <span class="text-xs text-royal-500 font-semibold uppercase tracking-widest">Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-24 bg-royal-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-8 bg-gold-600"></div>
+                    <span class="text-gold-600 font-bold text-xs uppercase tracking-[0.2em]">Premium Facilities</span>
+                    <div class="h-[1px] w-8 bg-gold-600"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-royal-900 mb-6">Designed for Comfort</h2>
+                <p class="text-royal-500 text-lg font-light">We provide world-class amenities to ensure your stay in Trivandrum is absolutely flawless and relaxing.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Amenity 1 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-snowflake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Central AC</h3>
+                    <p class="text-sm text-royal-500 font-light">Climate-controlled comfort in all areas.</p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-wifi text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">High-Speed Wi-Fi</h3>
+                    <p class="text-sm text-royal-500 font-light">Stay connected with complimentary internet.</p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-utensils text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Multi-Cuisine Dining</h3>
+                    <p class="text-sm text-royal-500 font-light">Exquisite culinary experiences in-house.</p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-concierge-bell text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Room Service</h3>
+                    <p class="text-sm text-royal-500 font-light">24/7 dedicated in-room dining and assistance.</p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-car text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Valet Parking</h3>
+                    <p class="text-sm text-royal-500 font-light">Secure and convenient parking facility.</p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-tv text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Smart TV</h3>
+                    <p class="text-sm text-royal-500 font-light">Premium entertainment in every room.</p>
+                </div>
+
+                <!-- Amenity 7 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">24/7 Security</h3>
+                    <p class="text-sm text-royal-500 font-light">Comprehensive CCTV and security personnel.</p>
+                </div>
+
+                <!-- Amenity 8 -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-2xl transition-all duration-300 group text-center border border-transparent hover:border-gold-100">
+                    <div class="w-16 h-16 mx-auto bg-royal-50 text-royal-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-plane-departure text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-900 mb-2">Travel Desk</h3>
+                    <p class="text-sm text-royal-500 font-light">Airport transfers and tour arrangements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div class="max-w-2xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-[1px] w-12 bg-gold-600"></div>
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-[0.2em]">Accommodation</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-royal-900">Luxurious Living Spaces</h2>
+                </div>
+                <a href="tel:09999999999"
+                    class="hidden md:inline-flex items-center gap-2 text-royal-900 font-bold hover:text-gold-600 transition-colors tracking-widest uppercase text-sm">
+                    View All Rooms <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Room 1 -->
+                <div class="group bg-white overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="images/NonAcRoom.webp" alt="Standard Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-0 left-0 bg-royal-900 text-white px-4 py-2 text-lg font-bold">
+                            ₹2,500 <span class="text-xs text-gray-300 uppercase tracking-widest font-normal">/ Night</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-royal-900 mb-3 group-hover:text-gold-600 transition-colors">Standard Room</h3>
+                        <div class="flex gap-4 text-royal-500 text-sm mb-6 border-b border-gray-100 pb-6">
+                            <span title="Queen Bed"><i class="fas fa-bed"></i> 1 Queen</span>
+                            <span title="2 Guests"><i class="fas fa-user"></i> 2 Guests</span>
+                            <span title="250 sqft"><i class="fas fa-vector-square"></i> 250 sq ft</span>
+                        </div>
+                        <p class="text-royal-500 text-sm mb-8 font-light line-clamp-2">Elegant and cozy room equipped with all modern amenities, perfect for short stays and business travelers.</p>
+                        <a href="tel:09999999999" class="block w-full text-center bg-blue-600 text-white font-bold py-3 rounded-full hover:bg-blue-700 transition-all uppercase text-xs tracking-[0.2em] shadow-md">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="group bg-white overflow-hidden shadow-2xl border border-gold-200 transition-all duration-500 relative lg:-mt-6">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold-600 z-10"></div>
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="images/ACRoom.webp" alt="Deluxe Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-0 left-0 bg-gold-600 text-white px-4 py-2 text-lg font-bold z-10">
+                            ₹3,500 <span class="text-xs text-gold-100 uppercase tracking-widest font-normal">/ Night</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-royal-900 text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest z-10">
+                            Most Popular
+                        </div>
+                    </div>
+                    <div class="p-8 bg-royal-950 text-white">
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors">Deluxe AC Room</h3>
+                        <div class="flex gap-4 text-gray-400 text-sm mb-6 border-b border-gray-800 pb-6">
+                            <span title="King Bed"><i class="fas fa-bed"></i> 1 King</span>
+                            <span title="2 Guests"><i class="fas fa-user"></i> 2 Guests</span>
+                            <span title="350 sqft"><i class="fas fa-vector-square"></i> 350 sq ft</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 font-light line-clamp-2">Spacious and luxurious room offering premium comfort, city views, and upgraded amenities for a relaxing stay.</p>
+                        <a href="tel:09999999999" class="block w-full text-center bg-blue-600 text-white font-bold py-3 rounded-full hover:bg-blue-700 transition-all uppercase text-xs tracking-[0.2em] shadow-lg shadow-blue-900/50">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="group bg-white overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="images/familyStay.webp" alt="Executive Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-0 left-0 bg-royal-900 text-white px-4 py-2 text-lg font-bold">
+                            ₹5,500 <span class="text-xs text-gray-300 uppercase tracking-widest font-normal">/ Night</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-royal-900 mb-3 group-hover:text-gold-600 transition-colors">Executive Suite</h3>
+                        <div class="flex gap-4 text-royal-500 text-sm mb-6 border-b border-gray-100 pb-6">
+                            <span title="King Bed"><i class="fas fa-bed"></i> 1 King</span>
+                            <span title="3 Guests"><i class="fas fa-user"></i> 3 Guests</span>
+                            <span title="500 sqft"><i class="fas fa-vector-square"></i> 500 sq ft</span>
+                        </div>
+                        <p class="text-royal-500 text-sm mb-8 font-light line-clamp-2">The ultimate luxury experience with a separate living area, premium furnishings, and complimentary services.</p>
+                        <a href="tel:09999999999" class="block w-full text-center bg-blue-600 text-white font-bold py-3 rounded-full hover:bg-blue-700 transition-all uppercase text-xs tracking-[0.2em] shadow-md">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-royal-950 text-white relative overflow-hidden bg-pattern">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-8 bg-gold-600"></div>
+                    <span class="text-gold-500 font-bold text-xs uppercase tracking-[0.2em]">Guest Reviews</span>
+                    <div class="h-[1px] w-8 bg-gold-600"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">What Our Guests Say</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-royal-900/50 backdrop-blur border border-royal-800 p-10 relative">
+                    <i class="fas fa-quote-left text-4xl text-royal-800 absolute top-6 right-6 opacity-50"></i>
+                    <div class="flex text-gold-500 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 font-light italic mb-8 leading-relaxed">"Excellent location! Just a short walk to the Padmanabha Swamy Temple. The rooms are spotless, and the staff's hospitality is truly commendable."</p>
+                    <div class="flex items-center gap-4 border-t border-royal-800 pt-6">
+                        <div class="w-12 h-12 bg-gold-600 rounded-full flex items-center justify-center text-xl font-bold text-white">R</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Rajesh Kumar</h4>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Chennai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-royal-900/50 backdrop-blur border border-royal-800 p-10 relative">
+                    <i class="fas fa-quote-left text-4xl text-royal-800 absolute top-6 right-6 opacity-50"></i>
+                    <div class="flex text-gold-500 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-300 font-light italic mb-8 leading-relaxed">"We stayed in the Deluxe AC room. It was very comfortable and well-maintained. The food served at the restaurant was authentic and delicious."</p>
+                    <div class="flex items-center gap-4 border-t border-royal-800 pt-6">
+                        <div class="w-12 h-12 bg-gold-600 rounded-full flex items-center justify-center text-xl font-bold text-white">A</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Anita Menon</h4>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Kochi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-royal-900/50 backdrop-blur border border-royal-800 p-10 relative">
+                    <i class="fas fa-quote-left text-4xl text-royal-800 absolute top-6 right-6 opacity-50"></i>
+                    <div class="flex text-gold-500 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 font-light italic mb-8 leading-relaxed">"A premium experience at a reasonable price. The valet parking and 24/7 service made our business trip very smooth. Highly recommended."</p>
+                    <div class="flex items-center gap-4 border-t border-royal-800 pt-6">
+                        <div class="w-12 h-12 bg-gold-600 rounded-full flex items-center justify-center text-xl font-bold text-white">S</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Siddharth V.</h4>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Bangalore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="bg-white shadow-2xl flex flex-col lg:flex-row overflow-hidden border border-gray-100 rounded-3xl">
+                <!-- Contact Info -->
+                <div class="w-full lg:w-5/12 p-12 lg:p-16 bg-blue-600 text-white relative overflow-hidden">
+                    <!-- Decorative elements -->
+                    <div class="absolute -right-16 -top-16 w-64 h-64 border border-blue-400/30 rounded-full"></div>
+                    <div class="absolute -right-8 -top-8 w-48 h-48 border border-blue-400/40 rounded-full"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="h-[1px] w-8 bg-blue-300"></div>
+                            <span class="text-blue-100 font-bold text-xs uppercase tracking-[0.2em]">Reach Out</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-10">Contact Us</h2>
+                        
+                        <div class="space-y-10">
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-12 h-12 rounded-full bg-blue-700 border border-blue-500 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-colors">
+                                    <i class="fas fa-map-marker-alt text-white group-hover:text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-blue-200 uppercase text-[10px] tracking-widest mb-2">Location</h5>
+                                    <p class="text-sm leading-relaxed text-white font-light">12, Near Padmanabha Swamy Temple, Fort, East Fort, Pazhavangadi, Thiruvananthapuram, Kerala 695023</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-12 h-12 rounded-full bg-blue-700 border border-blue-500 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-colors">
+                                    <i class="fas fa-phone-alt text-white group-hover:text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-blue-200 uppercase text-[10px] tracking-widest mb-2">Reservations</h5>
+                                    <a href="tel:09999999999" class="text-lg tracking-wide hover:text-blue-200 text-white transition font-bold">+91 9999999999</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-12 h-12 rounded-full bg-blue-700 border border-blue-500 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-colors">
+                                    <i class="fas fa-envelope text-white group-hover:text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-blue-200 uppercase text-[10px] tracking-widest mb-2">Email</h5>
+                                    <a href="mailto:info@hotelrajdhani.com" class="text-sm font-light text-white hover:text-blue-200 transition break-all">info@hotelrajdhani.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="w-full lg:w-7/12 h-[500px] lg:h-auto relative">
+                    <!-- Note: The map iframe points exactly to Hotel Rajdhani, East Fort -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0699479369974!2d76.9427380153545!3d8.483984593902364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbaaeb6ce9bb%3A0xc39cf77dc05f4277!2sHotel%20Rajadhani!5e0!3m2!1sen!2sin!4v1689234567890!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out absolute inset-0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-950 text-gray-400 py-12 border-t border-royal-900">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <i class="fas fa-crown text-2xl text-gold-600"></i>
+                <span class="text-white text-2xl font-bold">Hotel Rajdhani</span>
+            </div>
+
+            <p class="text-sm font-light mb-8 max-w-md mx-auto">Experience the perfect blend of Kerala's heritage and modern luxury in the heart of Trivandrum.</p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest font-bold mb-8">
+                <a href="privacy-policy.html" class="hover:text-gold-500 transition-colors">Privacy Policy</a>
+                <span class="text-royal-800">|</span>
+                <a href="terms-and-conditions.html" class="hover:text-gold-500 transition-colors">Terms & Conditions</a>
+                <span class="text-royal-800">|</span>
+                <a href="disclaimer.html" class="hover:text-gold-500 transition-colors">Disclaimer</a>
+            </div>
+            
+            <p class="text-xs text-royal-700 font-light">© 2026 Hotel Rajdhani, Thiruvananthapuram. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+        
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.replace('py-4', 'py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('py-2', 'py-4');
+            }
+        });
+    </script>
+</body>
+</html>
